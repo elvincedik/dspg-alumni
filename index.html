@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DSPG Alumni - Building Tomorrow Together</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <style>
         * {
             margin: 0;
@@ -27,7 +29,6 @@
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
             z-index: 1000;
-            padding: 1rem 0;
             transition: all 0.3s ease;
             border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
@@ -145,7 +146,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8));
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.5), rgba(118, 75, 162, 0.5));
             z-index: 1;
         }
 
@@ -218,8 +219,8 @@
         .carousel-indicators {
             position: absolute;
             bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
+            
+            
             display: flex;
             gap: 0.5rem;
             z-index: 3;
@@ -569,9 +570,7 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
+            
 
             .mobile-menu {
                 display: flex;
@@ -603,7 +602,7 @@
 
 <body>
     <!-- Navigation -->
-    <nav class="navbar" id="navbar">
+    <!-- <nav class="navbar" id="navbar">
         <div class="nav-container">
             <div class="logo">DSPG Alumni</div>
             <ul class="nav-links">
@@ -619,19 +618,48 @@
                 <span></span>
             </div>
         </div>
+    </nav> -->
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" id="navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="./assets/images/alumni-logo.jpg" alt="" width="60px">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto nav-links">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#executives">Executives</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"  href="https://chat.whatsapp.com/F58AJTTff9R8m6VQuQJwcU">Join Community</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-carousel">
             <div class="carousel-slide active"
-                style="background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1200 800%22%3E%3Crect width=%221200%22 height=%22800%22 fill=%22%23667eea%22 /%3E%3Ccircle cx=%22200%22 cy=%22200%22 r=%22100%22 fill=%22%23764ba2%22 opacity=%220.3%22 /%3E%3Ccircle cx=%221000%22 cy=%22600%22 r=%22150%22 fill=%22%23667eea%22 opacity=%220.2%22 /%3E%3C/svg%3E');">
+                style="background-image: url('./assets/images/alumni5.png'); background-size:cover;">
             </div>
             <div class="carousel-slide"
-                style="background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1200 800%22%3E%3Crect width=%221200%22 height=%22800%22 fill=%22%23764ba2%22 /%3E%3Cpolygon points=%22600,100 800,300 400,300%22 fill=%22%23667eea%22 opacity=%220.3%22 /%3E%3Ccircle cx=%22300%22 cy=%22500%22 r=%2280%22 fill=%22%23667eea%22 opacity=%220.2%22 /%3E%3C/svg%3E');">
+                style="background-image: url('./assets/images/alumni2.jpg'); background-size:cover">
             </div>
             <div class="carousel-slide"
-                style="background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1200 800%22%3E%3Crect width=%221200%22 height=%22800%22 fill=%22%23667eea%22 /%3E%3Crect x=%22100%22 y=%22100%22 width=%22200%22 height=%22200%22 fill=%22%23764ba2%22 opacity=%220.3%22 transform=%22rotate(45 200 200)%22 /%3E%3Ccircle cx=%22900%22 cy=%22200%22 r=%22120%22 fill=%22%23764ba2%22 opacity=%220.2%22 /%3E%3C/svg%3E');">
+                style="background-image: url('./assets/images/alumni3.jpg'); background-size:cover">
+            </div>
+            <div class="carousel-slide"
+                style="background-image: url('./assets/images/alumni4.jpg'); background-size:cover">
             </div>
         </div>
         <div class="hero-content">
@@ -640,13 +668,14 @@
                 making a difference.</p>
             <div class="cta-buttons">
                 <a href="#donate" class="btn btn-primary">Make a Donation</a>
-                <a href="#community" class="btn btn-outline">Join Community</a>
+                <a href="https://chat.whatsapp.com/F58AJTTff9R8m6VQuQJwcU" class="btn btn-outline">Join Community</a>
             </div>
         </div>
         <div class="carousel-indicators">
             <div class="indicator active" data-slide="0"></div>
             <div class="indicator" data-slide="1"></div>
             <div class="indicator" data-slide="2"></div>
+            <div class="indicator" data-slide="3"></div>
         </div>
     </section>
 
@@ -757,6 +786,7 @@
             navLinks.style.display = navLinks.style.display === "flex" ? "none" : "flex";
         });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 
 </body>
 
