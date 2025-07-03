@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DSPG Alumni - Building Tomorrow Together</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      color: #1a1a1a;
+      background: #f8fafc;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      z-index: 1000;
+      padding: 1rem 0;
+      transition: all 0.3s ease;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #4a5568;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      color: #667eea;
+      transform: translateY(-2px);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .mobile-menu span {
+      width: 25px;
+      height: 3px;
+      background: #4a5568;
+      margin: 3px 0;
+      transition: 0.3s;
+    }
+
+    /* Responsive Navigation */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 2rem;
+        background: white;
+        flex-direction: column;
+        width: 200px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+        border-radius: 10px;
+        z-index: 999;
+      }
+
+      .nav-links li {
+        margin-bottom: 1rem;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .mobile-menu {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="logo">DSPG Alumni</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#executives">Executives</a></li>
+        <li><a href="#activities">Activities</a></li>
+        <li><a href="#donate">Donate</a></li>
+        <li><a href="#community">Community</a></li>
+      </ul>
+      <div class="mobile-menu" id="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Dummy Hero Section -->
+  <section class="hero" id="home" style="padding-top: 100px; text-align:center">
+    <h1>Welcome to DSPG Alumni</h1>
+    <p>This is a demo section to test the navbar responsiveness.</p>
+  </section>
+
+  <!-- Dummy Sections -->
+  <section id="executives" style="padding: 100px 20px; background: #eee;">
+    <h2>Executives</h2>
+  </section>
+  <section id="activities" style="padding: 100px 20px;">
+    <h2>Activities</h2>
+  </section>
+  <section id="donate" style="padding: 100px 20px; background: #eee;">
+    <h2>Donate</h2>
+  </section>
+  <section id="community" style="padding: 100px 20px;">
+    <h2>Community</h2>
+  </section>
+
+  <!-- Mobile Navbar Script -->
+  <script>
+    const menuBtn = document.getElementById("mobile-menu");
+    const navLinks = document.querySelector(".nav-links");
+
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+
+    // Optional: Close menu on link click (for better UX)
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("show");
+      });
+    });
+  </script>
+</body>
+
+</html>
